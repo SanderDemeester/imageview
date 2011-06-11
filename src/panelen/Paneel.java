@@ -3,6 +3,7 @@ package panelen;
 import imageController.ImageModel;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.RenderingHints.Key;
 import java.awt.event.KeyEvent;
 
@@ -33,7 +34,8 @@ public class Paneel extends JPanel{
 		
 		
 		JScrollPane scrollpaneel = new JScrollPane(new PreviewPanel(imagemodel));
-		scrollpaneel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollpaneel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollpaneel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		add(scrollpaneel,BorderLayout.WEST);
 		add(new FotoPaneel(imagemodel),BorderLayout.CENTER);
 	}

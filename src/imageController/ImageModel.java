@@ -36,10 +36,10 @@ public class ImageModel extends Model{
 	public void setSelectedImage(MyImage image) {
 		// TODO Auto-generated method stub
 		huidigeSelectImage = image;
-		System.out.println(image.hashCode());
 		fireStateChanged();
 		
 	}
+	
 	public Image getCurrentImage() {
 		// TODO Auto-generated method stub
 		if(huidigeSelectImage != null)
@@ -57,7 +57,11 @@ public class ImageModel extends Model{
 			huidigeSelectImage = null;
 		}
 		fireStateChanged();
-		
 	}
+	public MyImage getCurrentMyImage() {
+		// TODO Auto-generated method stub
+		return huidigeSelectImage;
+	}
+	
 
 }

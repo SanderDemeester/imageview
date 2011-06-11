@@ -35,7 +35,7 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 	    
 		addMouseListener(mousecontroler);
 		setBorder(BorderFactory.createLineBorder(Color.black));
-		setPreferredSize(new Dimension(200,800));
+		setPreferredSize(new Dimension(200,200));
 	}
 	@Override
 	public void stateChanged(ChangeEvent e) {
@@ -55,12 +55,11 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 			int y = 0;
 			Graphics2D g2 = (Graphics2D)g;
 			for(int i = 0; i < lijst.size(); i++){
-				System.out.println("hier");
-				System.out.println(i);
 				g2.drawImage(lijst.get(i).getImage(), x, y, 200, 180, null);
-//				g2.draw(lijst.get(i).getrec());
 				y += 190;
 			}
+			setPreferredSize(new Dimension(200,y));
+			revalidate();
 		}
 			
 
