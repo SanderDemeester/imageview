@@ -3,6 +3,7 @@ package panelen;
 import imageController.ImageModel;
 
 import java.awt.BorderLayout;
+import java.awt.RenderingHints.Key;
 import java.awt.event.KeyEvent;
 
 import javax.swing.ActionMap;
@@ -12,6 +13,8 @@ import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 
 import acties.AfbeeldingDeleteAction;
+import acties.MoveDown;
+import acties.MoveUp;
 
 public class Paneel extends JPanel{
 	
@@ -19,11 +22,14 @@ public class Paneel extends JPanel{
 		super();
 		setLayout(new BorderLayout());
 		
-		ActionMap actiemap = this.getActionMap();
-		actiemap.put("d-afbeelding",new AfbeeldingDeleteAction(imagemodel));
+		getActionMap().put("d-afbeelding",new AfbeeldingDeleteAction(imagemodel));
+		getActionMap().put("up", new MoveUp(imagemodel));
+		getActionMap().put("down", new MoveDown(imagemodel));
 		
-		InputMap inputMap = this.getInputMap();
-		inputMap.put(KeyStroke.getKeyStroke("ctrl D"), "d-afbeelding");
+		
+		getInputMap().put(KeyStroke.getKeyStroke("ctrl D"), "d-afbeelding");
+		getInputMap().put(KeyStroke.getKeyStroke("UP"), "up");
+		getInputMap().put(KeyStroke.getKeyStroke("DOWN"),"down");
 		
 		
 		JScrollPane scrollpaneel = new JScrollPane(new PreviewPanel(imagemodel));

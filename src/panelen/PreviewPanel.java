@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import javax.swing.ActionMap;
@@ -19,6 +20,8 @@ import javax.swing.event.ChangeListener;
 
 import mouseControler.MouseControler;
 import acties.AfbeeldingDeleteAction;
+import acties.MoveDown;
+import acties.MoveUp;
 
 public class PreviewPanel extends JPanel implements ChangeListener{
 	private ImageModel imagemodel;
@@ -26,10 +29,6 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 	private MouseControler mousecontroler;
 	public PreviewPanel(ImageModel imagemodel){
 		super();
-		
-		
-	
-		
 		this.imagemodel = imagemodel;
 		imagemodel.addChangeListener(this);
 		mousecontroler = new MouseControler(imagemodel);

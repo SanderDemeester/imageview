@@ -22,11 +22,13 @@ public class OpenFolder implements MenuActies{
 		folderkiezer.showOpenDialog(null);
 		folder = folderkiezer.getSelectedFile();
 		
+		if(folder != null){
 		File[] bestanden = folder.listFiles(new ImageFilter());
 		lijstafbeeldingen = new ImageIcon[bestanden.length];
 		for(int i = 0; i < bestanden.length; i++)
 			lijstafbeeldingen[i] = new ImageIcon(bestanden[i].getAbsolutePath());
 		imagemodel.setLijstafbeeldingen(lijstafbeeldingen);
+		}
 
 
 	}
