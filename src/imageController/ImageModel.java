@@ -2,10 +2,9 @@ package imageController;
 
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 
@@ -21,9 +20,9 @@ public class ImageModel extends Model{
 		huidigeSelectImage = null;
 		
 	}
-	public void setLijstafbeeldingen(ImageIcon[] lijst){
-		for(ImageIcon icon : lijst){
-			lijstafbeeldingen.add(new MyImage(icon, new Rectangle(0, 
+	public void setLijstafbeeldingen(BufferedImage[] lijst){
+		for(BufferedImage image : lijst){
+			lijstafbeeldingen.add(new MyImage(image, new Rectangle(0, 
 					lijstafbeeldingen.size()*hoogteafbeelding, 
 					200, 
 					180)));

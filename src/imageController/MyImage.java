@@ -2,11 +2,12 @@ package imageController;
 
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 
 public class MyImage extends ImageIcon{
-	private ImageIcon imageicon;
+	private BufferedImage image;
 	private Rectangle rec;
 	public MyImage(int widht, int height, int type){
 //		super(widht,height,type);
@@ -15,18 +16,18 @@ public class MyImage extends ImageIcon{
 	public MyImage(){
 		super();
 	}
-	public MyImage(ImageIcon imageicon){
+	public MyImage(BufferedImage image){
 		super();
-		this.imageicon = imageicon; 
+		this.image = image; 
 	}
-	public MyImage(ImageIcon imageicon, Rectangle rec){
+	public MyImage(BufferedImage image, Rectangle rec){
 		super();
-		this.imageicon = imageicon;
+		this.image = image;
 		this.rec = rec;
 	}
 	
-	public Image getImage(){
-		return imageicon.getImage();
+	public BufferedImage getImage(){
+		return image;
 	}
 	
 	public Rectangle getrec(){

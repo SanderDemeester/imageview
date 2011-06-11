@@ -8,6 +8,7 @@ public class Closeapp implements MenuActies{
 	@Override
 	public void execute(ImageModel imagemodel) {
 		// TODO Auto-generated method stub
+		System.exit(0);
 		
 	}
 

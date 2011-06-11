@@ -20,9 +20,11 @@ public class MoveDown extends AbstractAction{
 		ArrayList<MyImage> lijst = new ArrayList<MyImage>();
 		lijst = imagemodel.getLijst();
 		MyImage image = imagemodel.getCurrentMyImage();
-		if(lijst.size() > 0)
+		
+		if(lijst.size() > 0  && lijst.indexOf(image)+1 <= lijst.size()-1)
 			imagemodel.setSelectedImage(lijst.get(lijst.indexOf(image)+1));
 		else if(lijst.size() <= 0)
+			if(lijst.size()>0)
 			imagemodel.setSelectedImage(lijst.get(0));
 		
 	}

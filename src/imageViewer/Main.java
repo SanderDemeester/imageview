@@ -4,9 +4,10 @@ import imageController.ImageModel;
 
 import java.awt.Dimension;
 import java.awt.EventQueue;
-import java.awt.Image;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import menuItems.Menubalk;
 import panelen.Paneel;
@@ -25,8 +26,13 @@ public class Main {
 		frame.setJMenuBar(new Menubalk(imagemodel));
 	}
 	public static void main(String[] args){
+		try {
+			UIManager.setLookAndFeel(UIManager.getLookAndFeel());
+		} catch (UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			//set de default look and feel
+		}
 		EventQueue.invokeLater(new Runnable() {
-			
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub

@@ -20,7 +20,8 @@ public class MoveUp extends AbstractAction{
 		ArrayList<MyImage> lijst = new ArrayList<MyImage>();
 		lijst = imagemodel.getLijst();
 		MyImage image = imagemodel.getCurrentMyImage();
-		if(lijst.size() > 0 && lijst.indexOf(image) < lijst.size())
+		System.out.println(lijst.indexOf(image));
+		if(lijst.size() > 0 && lijst.indexOf(image) > 0)
 			imagemodel.setSelectedImage(lijst.get(lijst.indexOf(image)-1));
 		else if(lijst.size() > 0)
 			imagemodel.setSelectedImage(lijst.get(0));

@@ -28,7 +28,7 @@ public class Paneel extends JPanel{
 		getActionMap().put("down", new MoveDown(imagemodel));
 		
 		
-		getInputMap().put(KeyStroke.getKeyStroke("ctrl D"), "d-afbeelding");
+		getInputMap().put(KeyStroke.getKeyStroke("ctrl d"), "d-afbeelding");
 		getInputMap().put(KeyStroke.getKeyStroke("UP"), "up");
 		getInputMap().put(KeyStroke.getKeyStroke("DOWN"),"down");
 		
