@@ -33,6 +33,7 @@ public class Main {
 			// TODO Auto-generated catch block
 			//set de default look and feel
 		}
+		
 		final ImageModel imagemodel = new ImageModel(new GenericSettings());
 		EventQueue.invokeLater(new Runnable() {
 			@Override
