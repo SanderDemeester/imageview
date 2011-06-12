@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import javax.swing.InputMap;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
+import javax.swing.Scrollable;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -70,9 +72,9 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 			}
 			setPreferredSize(new Dimension(200,y));
 			revalidate();
-			System.out.println(getAlignmentX());
-			System.out.println(getAlignmentY());
 		}
+		
+	
 			
 
 	}

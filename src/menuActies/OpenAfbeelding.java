@@ -9,6 +9,7 @@ public class OpenAfbeelding implements MenuActies{
 	public void execute(ImageModel imagemodel) {
 		// TODO Auto-generated method stub
 		
+		
 	}
 
 }

@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 
@@ -19,13 +20,17 @@ import acties.MoveUp;
 
 public class Paneel extends JPanel{
 	
+	private JScrollBar scrollbar;
+	private ImageModel imagemodel;
+	
 	public Paneel(ImageModel imagemodel){
 		super();
+		this.imagemodel = imagemodel;
 		setLayout(new BorderLayout());
 		
 		getActionMap().put("d-afbeelding",new AfbeeldingDeleteAction(imagemodel));
-		getActionMap().put("up", new MoveUp(imagemodel));
-		getActionMap().put("down", new MoveDown(imagemodel));
+		getActionMap().put("up", new MoveUp(imagemodel,this));
+		getActionMap().put("down", new MoveDown(imagemodel,this));
 		
 		
 		getInputMap().put(KeyStroke.getKeyStroke("ctrl D"), "d-afbeelding");
@@ -36,8 +41,20 @@ public class Paneel extends JPanel{
 		JScrollPane scrollpaneel = new JScrollPane(new PreviewPanel(imagemodel));
 		scrollpaneel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollpaneel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollbar = scrollpaneel.getVerticalScrollBar();
 		add(scrollpaneel,BorderLayout.WEST);
 		add(new FotoPaneel(imagemodel),BorderLayout.CENTER);
+	}
+	
+	public void updateScrollPanel(){
+//		int pos = imagemodel.getLijst().indexOf(imagemodel.getCurrentImage());
+//		int scrollbarmax = scrollbar.getMaximum();
+//		int scrollbarmin = scrollbar.getMinimum();
+//		System.out.println(scrollbarmax);
+//		System.out.println(scrollbarmin);
+//		System.out.println(pos);
+//		scrollbar.setValue(scrollbar.getMaximum());
+		
 	}
 
 }
