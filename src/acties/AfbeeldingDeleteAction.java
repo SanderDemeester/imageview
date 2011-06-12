@@ -16,6 +16,7 @@ public class AfbeeldingDeleteAction extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println("delet curent image");
 		imagemodel.deleteCurrentImage();
 		
 	}

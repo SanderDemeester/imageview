@@ -8,12 +8,14 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import javax.swing.ActionMap;
 import javax.swing.BorderFactory;
 import javax.swing.InputMap;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -32,6 +34,7 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 		this.imagemodel = imagemodel;
 		imagemodel.addChangeListener(this);
 		mousecontroler = new MouseControler(imagemodel);
+
 	    
 		addMouseListener(mousecontroler);
 		setBorder(BorderFactory.createLineBorder(Color.black));
@@ -67,6 +70,8 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 			}
 			setPreferredSize(new Dimension(200,y));
 			revalidate();
+			System.out.println(getAlignmentX());
+			System.out.println(getAlignmentY());
 		}
 			
 

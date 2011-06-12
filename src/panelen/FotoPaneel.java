@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -22,7 +24,7 @@ public class FotoPaneel extends JPanel implements ChangeListener{
 		imagemodel.addChangeListener(this);
 		
 		setBorder(BorderFactory.createLineBorder(Color.black));
-		setBackground(Color.black);
+		setBackground(Color.green);
 		setPreferredSize(new Dimension(300,800));
 	}
 	@Override
@@ -42,8 +44,16 @@ public class FotoPaneel extends JPanel implements ChangeListener{
 	public void paintt(Graphics g){
 //		g.drawRect(20, 20, 500, 300);
 		Graphics2D g2 = (Graphics2D)g;
-		if(image != null)
-		g.drawImage(image, 10, 10, getWidth()-20, getHeight()-20, null);
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		
+		
+		if(image != null){
+			BufferedImage bi = new BufferedImage(image.getWidth(null),
+					image.getHeight(null),
+					BufferedImage.TYPE_USHORT_565_RGB);
+			Graphics gg = bi.getGraphics();
+			g2.drawImage(image, 10, 10, getWidth()-20, getHeight()-20, null);
+		}
 	}
 
 }
