@@ -47,13 +47,13 @@ public class Paneel extends JPanel{
 	}
 	
 	public void updateScrollPanel(){
-//		int pos = imagemodel.getLijst().indexOf(imagemodel.getCurrentImage());
-//		int scrollbarmax = scrollbar.getMaximum();
-//		int scrollbarmin = scrollbar.getMinimum();
-//		System.out.println(scrollbarmax);
-//		System.out.println(scrollbarmin);
-//		System.out.println(pos);
-//		scrollbar.setValue(scrollbar.getMaximum());
+		int pos = imagemodel.getCurrentIndexOfSelectedImage();
+		int scrollbarmax = scrollbar.getMaximum();
+		int scrollbarmin = scrollbar.getMinimum();
+		System.out.println(scrollbarmax);
+		System.out.println(scrollbarmin);
+		System.out.println(pos);
+		scrollbar.setValue(scrollbar.getMaximum());
 		
 	}
 

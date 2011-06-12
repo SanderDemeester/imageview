@@ -30,7 +30,7 @@ public class MoveDown extends AbstractAction{
 		else if(lijst.size() <= 0)
 			if(lijst.size()>0)
 			imagemodel.setSelectedImage(lijst.get(0));
-//		panel.updateScrollPanel();
+		panel.updateScrollPanel();
 		
 	}
 

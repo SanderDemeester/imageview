@@ -63,11 +63,13 @@ public class PreviewPanel extends JPanel implements ChangeListener{
 			for(int i = 0; i < lijst.size(); i++){
 				
 				if(lijst.get(i).getImage().equals(imagemodel.getCurrentImage())){
-				g2.drawRect(0, y, 250, 150);
+				g2.drawRect(0, y, 250, imagemodel.HOOGTEAFBEELDINGPREVIEW);
 				g2.setColor(Color.gray);
-				g2.fillRect(0, y, 250, 150);
+				g2.fillRect(0, y, 250, imagemodel.HOOGTEAFBEELDINGPREVIEW);
 				}
-				g2.drawImage(lijst.get(i).getImage(), x, y, 180, 150, null);
+				g2.drawImage(lijst.get(i).getImage(), x, y, imagemodel.BREEDTEAFBEELDINGPREVIEW,
+															imagemodel.HOOGTEAFBEELDINGPREVIEW, 
+															null);
 				y += 190;
 			}
 			setPreferredSize(new Dimension(200,y));

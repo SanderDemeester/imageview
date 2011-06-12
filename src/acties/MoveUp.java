@@ -29,7 +29,7 @@ public class MoveUp extends AbstractAction{
 			imagemodel.setSelectedImage(lijst.get(lijst.indexOf(image)-1));
 		else if(lijst.size() > 0)
 			imagemodel.setSelectedImage(lijst.get(0));
-//		panel.updateScrollPanel();
+		panel.updateScrollPanel();
 		
 	}
 		

@@ -16,6 +16,8 @@ public class ImageModel extends Model{
 	private MyImage voorkeurImage = new MyImage();
 	private MyImage huidigeSelectImage = new MyImage();
 	private GenericSettings genericsettings;
+	public final static int BREEDTEAFBEELDINGPREVIEW = 180;
+	public final static int HOOGTEAFBEELDINGPREVIEW = 150;
 
 	public ImageModel(GenericSettings genericsettings){
 		super();
@@ -64,6 +66,9 @@ public class ImageModel extends Model{
 	public MyImage getCurrentMyImage() {
 		// TODO Auto-generated method stub
 		return huidigeSelectImage;
+	}
+	public int getCurrentIndexOfSelectedImage(){
+		return lijstafbeeldingen.indexOf(huidigeSelectImage);
 	}
 	
 
