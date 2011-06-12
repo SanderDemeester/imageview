@@ -7,15 +7,19 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
+import settingsobject.GenericSettings;
+
 
 public class ImageModel extends Model{
 	private ArrayList<MyImage> lijstafbeeldingen = new ArrayList<MyImage>();
 	private static final int hoogteafbeelding = 190;
 	private MyImage voorkeurImage = new MyImage();
 	private MyImage huidigeSelectImage = new MyImage();
+	private GenericSettings genericsettings;
 
-	public ImageModel(){
+	public ImageModel(GenericSettings genericsettings){
 		super();
+		this.genericsettings = genericsettings;
 		voorkeurImage = null;
 		huidigeSelectImage = null;
 		
