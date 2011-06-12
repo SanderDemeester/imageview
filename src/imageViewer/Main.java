@@ -16,7 +16,7 @@ public class Main {
 	
 	private static void createGUI(){
 		ImageModel imagemodel = new ImageModel();
-		JFrame frame = new JFrame("Image viewer");
+		JFrame frame = new JFrame("Developerbranch");
 		frame.setContentPane(new Paneel(imagemodel));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);

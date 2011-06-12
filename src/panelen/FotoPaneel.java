@@ -24,7 +24,7 @@ public class FotoPaneel extends JPanel implements ChangeListener{
 		imagemodel.addChangeListener(this);
 		
 		setBorder(BorderFactory.createLineBorder(Color.black));
-		setBackground(Color.green);
+		setBackground(Color.black);
 		setPreferredSize(new Dimension(300,800));
 	}
 	@Override
