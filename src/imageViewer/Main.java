@@ -12,13 +12,14 @@ import javax.swing.UnsupportedLookAndFeelException;
 import menuItems.Menubalk;
 import panelen.Paneel;
 import settingsobject.GenericSettings;
+import settingsobject.PanelControler;
 
 public class Main {
 	
 	private static void createGUI(ImageModel imagemodel){
 		
 		JFrame frame = new JFrame("Developerbranch");
-		frame.setContentPane(new Paneel(imagemodel));
+		frame.setContentPane(new Paneel(imagemodel,new PanelControler()));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		frame.setPreferredSize(new Dimension(800,500));

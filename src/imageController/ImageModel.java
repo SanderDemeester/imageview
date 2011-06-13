@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 import settingsobject.GenericSettings;
+import settingsobject.PanelControler;
 
 
 public class ImageModel extends Model{
@@ -16,6 +17,7 @@ public class ImageModel extends Model{
 	private MyImage voorkeurImage = new MyImage();
 	private MyImage huidigeSelectImage = new MyImage();
 	private GenericSettings genericsettings;
+	private PanelControler panelctrl;
 	public final static int BREEDTEAFBEELDINGPREVIEW = 180;
 	public final static int HOOGTEAFBEELDINGPREVIEW = 150;
 
@@ -69,6 +71,13 @@ public class ImageModel extends Model{
 	}
 	public int getCurrentIndexOfSelectedImage(){
 		return lijstafbeeldingen.indexOf(huidigeSelectImage);
+	}
+	public void setPanelControler(PanelControler panelcontroler) {
+		// TODO Auto-generated method stub
+		this.panelctrl = panelcontroler;
+	}
+	public PanelControler getPanelctr(){
+		return panelctrl;
 	}
 	
 

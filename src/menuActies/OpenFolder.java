@@ -29,10 +29,12 @@ public class OpenFolder implements MenuActies{
 		if(folder != null){
 		File[] bestanden = folder.listFiles(new ImageFilter());
 		lijstafbeeldingen = new BufferedImage[bestanden.length];
-		
+		imagemodel.getPanelctr().startprogressbar(bestanden.length);
 		for(int i = 0; i < bestanden.length; i++)
 			try {
 				lijstafbeeldingen[i] = ImageIO.read(new File(bestanden[i].getAbsolutePath()));
+				imagemodel.getPanelctr().step();
+				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -3,17 +3,14 @@ package panelen;
 import imageController.ImageModel;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.RenderingHints.Key;
-import java.awt.event.KeyEvent;
 
-import javax.swing.ActionMap;
-import javax.swing.InputMap;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
+import javax.swing.ProgressMonitor;
 
+import settingsobject.PanelControler;
 import acties.AfbeeldingDeleteAction;
 import acties.MoveDown;
 import acties.MoveUp;
@@ -22,10 +19,15 @@ public class Paneel extends JPanel{
 	
 	private JScrollBar scrollbar;
 	private ImageModel imagemodel;
+	private PanelControler panelcontroler;
+	private ProgressMonitor progbar;
 	
-	public Paneel(ImageModel imagemodel){
+	public Paneel(ImageModel imagemodel, PanelControler panelcontroler){
 		super();
 		this.imagemodel = imagemodel;
+		this.panelcontroler = panelcontroler;
+		panelcontroler.setpanel(this);
+		imagemodel.setPanelControler(panelcontroler);
 		setLayout(new BorderLayout());
 		
 		getActionMap().put("d-afbeelding",new AfbeeldingDeleteAction(imagemodel));
@@ -55,6 +57,15 @@ public class Paneel extends JPanel{
 		System.out.println(pos);
 		scrollbar.setValue(scrollbar.getMaximum());
 		
+	}
+
+	public void startprogressbar(int max) {
+		// TODO Auto-generated method stub
+		progbar = new ProgressMonitor(this, "Afbeelding wordt ingeladen",
+				null, 0, max);
+	}
+	public void stepProgresBar(int aantal){
+		progbar.setProgress(aantal);
 	}
 
 }
