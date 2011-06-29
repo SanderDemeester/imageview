@@ -22,6 +22,8 @@ public class Paneel extends JPanel{
 	private ImageModel imagemodel;
 	private PanelControler panelcontroler;
 	private JProgressBar jprogressbar;
+	private ProgressMonitor pmonitor;
+	private int aantalfotos;
 	
 	public Paneel(ImageModel imagemodel, PanelControler panelcontroler){
 		super();
@@ -62,7 +64,7 @@ public class Paneel extends JPanel{
 		System.out.println("max : " + scrollbarmax);
 		System.out.println("min : " + scrollbarmin);
 		System.out.println("pos : " + pos);
-		scrollbar.setValue(200);
+		scrollbar.setValue(scrollbar.getValue()-200);
 		System.out.println("scrolbar huidige value" + scrollbar.getValue());
 		
 	}
@@ -71,17 +73,19 @@ public class Paneel extends JPanel{
 		// TODO Auto-generated method stub
 		System.out.println("Start progresbar Paneel.java - startprogessbar");
 		System.out.println(max);
-		jprogressbar = new JProgressBar(0, max);
-		jprogressbar.setString("Inladen van de afbeeldingen");
-		jprogressbar.setStringPainted(true);
-		jprogressbar.setValue(0);
-		add(jprogressbar);
+		aantalfotos = max;
+		pmonitor = new ProgressMonitor(this, "De afbeelding worden ingeladen", "", 0, max);
 		
 	}
 	public void stepProgresBar(int aantal){
-		jprogressbar.setValue(jprogressbar.getValue()+1);
-		System.out.println("jrpgoresbar: " + jprogressbar.getValue());
-		System.out.println("aantal: " + aantal);
+		System.out.println(aantal);
+		pmonitor.setNote("Ingeladen: " + aantal);
+		if(aantal == aantalfotos){
+			System.out.println("close progressbar");
+			pmonitor.close();
+		}
+	
+		pmonitor.setProgress(aantal);
 	}
 
 }
