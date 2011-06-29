@@ -15,6 +15,7 @@ public class PanelControler {
 	}
 	
 	public void step(){
+		System.out.println("panel-step");
 		aantal = aantal +1;
 		EventQueue.invokeLater(new Runnable() {
 			@Override

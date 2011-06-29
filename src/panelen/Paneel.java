@@ -5,6 +5,7 @@ import imageController.ImageModel;
 import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
@@ -20,12 +21,16 @@ public class Paneel extends JPanel{
 	private JScrollBar scrollbar;
 	private ImageModel imagemodel;
 	private PanelControler panelcontroler;
-	private ProgressMonitor progbar;
+	private ProgressMonitor progmonitor;
+	private JProgressBar jprogressbar;
 	
 	public Paneel(ImageModel imagemodel, PanelControler panelcontroler){
 		super();
 		this.imagemodel = imagemodel;
 		this.panelcontroler = panelcontroler;
+		
+		jprogressbar = new JProgressBar();
+		
 		panelcontroler.setpanel(this);
 		imagemodel.setPanelControler(panelcontroler);
 		setLayout(new BorderLayout());
@@ -63,11 +68,13 @@ public class Paneel extends JPanel{
 
 	public void startprogressbar(int max) {
 		// TODO Auto-generated method stub
-		progbar = new ProgressMonitor(this, "Afbeelding wordt ingeladen",
+		System.out.println("Start progresbar Paneel.java - startprogessbar");
+		progmonitor = new ProgressMonitor(this, "Afbeelding wordt ingeladen",
 				null, 0, max);
 	}
 	public void stepProgresBar(int aantal){
-		progbar.setProgress(aantal);
+		System.out.println(" Paneel.java setProgessBar");
+		progmonitor.setProgress(aantal);
 	}
 
 }

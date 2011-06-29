@@ -20,7 +20,6 @@ public class MoveUp extends AbstractAction{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("MoveUp");
 		ArrayList<MyImage> lijst = new ArrayList<MyImage>();
 		lijst = imagemodel.getLijst();
 		MyImage image = imagemodel.getCurrentMyImage();
