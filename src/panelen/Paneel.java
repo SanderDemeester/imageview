@@ -43,6 +43,8 @@ public class Paneel extends JPanel{
 		JScrollPane scrollpaneel = new JScrollPane(new PreviewPanel(imagemodel));
 		scrollpaneel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		scrollpaneel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollpaneel.getVerticalScrollBar().setUnitIncrement(16);
+		
 		scrollbar = scrollpaneel.getVerticalScrollBar();
 		add(scrollpaneel,BorderLayout.WEST);
 		add(new FotoPaneel(imagemodel),BorderLayout.CENTER);
